@@ -82,11 +82,11 @@ const flowDuda = addKeyword(EVENTS.ACTION)
 
 const infoAll = addKeyword(EVENTS.ACTION)
     .addAnswer(info, { delay: 2000 })
-    .addAnswer(ubicacion, { media: 'D:/Laravel Projects/base-baileys-memory/img/ubipre.png', delay: 2000 })
-    .addAnswer('_Ofrecemos_', { media: "D:/Laravel Projects/base-baileys-memory/img/ofrecemos.jpeg", delay: 2000 })
-    .addAnswer('_Horario_', { media: "D:/Laravel Projects/base-baileys-memory/img/horario.jpeg", delay: 2000 })
-    .addAnswer('_Costos_', { media: "D:/Laravel Projects/base-baileys-memory/img/costos.jpeg", delay: 2000 })
-    .addAnswer('_Terrza Barcelona_', { media: "D:/Laravel Projects/base-baileys-memory/img/vdtb.mp4", delay: 2000 })
+    .addAnswer(ubicacion, { media: '/img/ubipre.png', delay: 2000 })
+    .addAnswer('_Ofrecemos_', { media: "/img/ofrecemos.jpeg", delay: 2000 })
+    .addAnswer('_Horario_', { media: "/img/horario.jpeg", delay: 2000 })
+    .addAnswer('_Costos_', { media: "/img/costos.jpeg", delay: 2000 })
+    .addAnswer('_Terrza Barcelona_', { media: "/img/vdtb.mp4", delay: 2000 })
     .addAnswer(apartado, { delay: 2000 })
     .addAnswer(null, null, async (ctx, { endFlow }) => {
         // Detiene el flujo aquí
