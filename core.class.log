@@ -1,0 +1,226 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3A17EFD772591807D547',
+    participant: undefined
+  },
+  messageTimestamp: 1726532085,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    conversation: 'Buenas tardes',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Buenas tardes',
+  from: '5213321745588'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_18fdd65f-f34e-440c-abec-fec0a6dac7dd',
+  keyword: 'key_4dbc54e3-620f-4865-b106-f50868d01d6d',
+  answer: 'Gracias por comunicarte con Terraza Barcelona\n' +
+    '\n' +
+    '¿Cómo podemos ayudarte?\n' +
+    '\n' +
+    '👉 Escribe *info*  para ver información de la Terraza\n' +
+    '\n' +
+    '👉 Escribe *otro* si necesitas consultar algo más.\n' +
+    '\n' +
+    'O si prefieres, puedes enviarnos un mensaje directamente:\n' +
+    '\n' +
+    '📲 [Más información](https://wa.me/523332395812?text=info)\n' +
+    '📲 [Otra consulta](https://wa.me/523332395812?text=otro)',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 3000,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '86c8f655f1936dca68b329804714a938'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3A9EE297889B8A4F5282',
+    participant: undefined
+  },
+  messageTimestamp: 1726532101,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: 'info', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'info',
+  from: '5213321745588'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3ADFE021426B84F78552',
+    participant: undefined
+  },
+  messageTimestamp: 1726532117,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    conversation: 'Gracias',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Gracias',
+  from: '5213321745588'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_18fdd65f-f34e-440c-abec-fec0a6dac7dd',
+  keyword: 'key_4dbc54e3-620f-4865-b106-f50868d01d6d',
+  answer: 'Gracias por comunicarte con Terraza Barcelona\n' +
+    '\n' +
+    '¿Cómo podemos ayudarte?\n' +
+    '\n' +
+    '👉 Escribe *info*  para ver información de la Terraza\n' +
+    '\n' +
+    '👉 Escribe *otro* si necesitas consultar algo más.\n' +
+    '\n' +
+    'O si prefieres, puedes enviarnos un mensaje directamente:\n' +
+    '\n' +
+    '📲 [Más información](https://wa.me/523332395812?text=info)\n' +
+    '📲 [Otra consulta](https://wa.me/523332395812?text=otro)',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 3000,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '86c8f655f1936dca68b329804714a938'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3A1B17A8C7FDBCDCE4DA',
+    participant: undefined
+  },
+  messageTimestamp: 1726532125,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: 'otro', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'otro',
+  from: '5213321745588'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3AB320AA60E4B4EA94E2',
+    participant: undefined
+  },
+  messageTimestamp: 1726532132,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    conversation: 'Susie’s',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Susie’s',
+  from: '5213321745588'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3ACE8CEE4A5BB14DB7AE',
+    participant: undefined
+  },
+  messageTimestamp: 1726532137,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    conversation: 'menu',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'menu',
+  from: '5213321745588'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3A52984D4BCCFD885B6E',
+    participant: undefined
+  },
+  messageTimestamp: 1726532152,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    conversation: 'Info',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Info',
+  from: '5213321745588'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213321745588@s.whatsapp.net',
+    fromMe: false,
+    id: '3A465A364B13443C098D',
+    participant: undefined
+  },
+  messageTimestamp: 1726532158,
+  pushName: 'Santiago',
+  broadcast: false,
+  message: Message {
+    conversation: 'Isis Isis',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Isis Isis',
+  from: '5213321745588'
+}
