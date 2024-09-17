@@ -38,6 +38,7 @@ const welcome = [
     'O si prefieres, puedes enviarnos un mensaje directamente:',
     '',
     '📲 [Más información](https://wa.me/523332395812?text=info)',
+    '',
     '📲 [Otra consulta](https://wa.me/523332395812?text=otro)'
 ];
 
@@ -82,11 +83,11 @@ const flowDuda = addKeyword(EVENTS.ACTION)
 
 const infoAll = addKeyword(EVENTS.ACTION)
     .addAnswer(info, { delay: 2000 })
-    .addAnswer(ubicacion, { media: '/app/img/ubipre.png', delay: 2000 })
-    .addAnswer('_Ofrecemos_', { media: "/app/img/ofrecemos.jpeg", delay: 2000 })
-    .addAnswer('_Horario_', { media: "/app/img/horario.jpeg", delay: 2000 })
-    .addAnswer('_Costos_', { media: "/app/img/costos.jpeg", delay: 2000 })
-    .addAnswer('_Terrza Barcelona_', { media: "/app/img/vdtb.mp4", delay: 2000 })
+    .addAnswer(ubicacion, { media: 'https://i.imgur.com/hZC1K1b.png', delay: 2000 })
+    .addAnswer('_Ofrecemos_', { media: "https://i.imgur.com/i3HreSp.jpeg", delay: 2000 })
+    .addAnswer('_Horarios_', { media: "https://i.imgur.com/uIt2uIm.jpeg", delay: 2000 })
+    .addAnswer('_Costos_', { media: "https://i.imgur.com/RH0Mf69.jpeg", delay: 2000 })
+    .addAnswer(['Visita nuestra página en Facebook', 'https://www.facebook.com/TerrazzaBarcelona'], { delay: 2000 })
     .addAnswer(apartado, { delay: 2000 })
     .addAnswer(null, null, async (ctx, { endFlow }) => {
         // Detiene el flujo aquí
