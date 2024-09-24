@@ -31,15 +31,12 @@ const welcome = [
     '',
     '¿Cómo podemos ayudarte?',
     '',
-    '👉 Escribe *info*  para ver información de la Terraza',
-    '',
-    '👉 Escribe *otro* si necesitas consultar algo más.',
-    '',
-    'O si prefieres, puedes enviarnos un mensaje directamente:',
+    '👉 Escribe *info* para ver información de la Terraza',
     '',
     '📲 [Más información](https://wa.me/523332395812?text=info)',
     '',
-    '📲 [Otra consulta](https://wa.me/523332395812?text=otro)'
+    '¿Tienes alguna otra consulta? por favor escríbela y te atenderemos pronto.',
+
 ];
 
 
@@ -97,7 +94,7 @@ const infoAll = addKeyword(EVENTS.ACTION)
 
 const flowConsultas = addKeyword(EVENTS.ACTION)
     .addAnswer(['Ya has solicitado información',
-        '¿Tienes alguna otra duda? por favor escríbela y te atenderemos pronto.'
+        '¿Tienes alguna otra consulta? por favor escríbela y te atenderemos pronto.'
     ], { delay: 2000, capture: true }, async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
         if (!['menu'].includes(ctx.body)) {
             return gotoFlow(flowOtro);
@@ -111,21 +108,20 @@ const infoFlow = addKeyword(EVENTS.WELCOME).addAnswer(
     { delay: 3000, capture: true },
     async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
 
-        if (['info', 'informacion', 'información', 'Info', 'INFO', 'informes',].includes(ctx.body)) {
+        if (!['info', 'informacion', 'información', 'Info', 'INFO', 'informes',].includes(ctx.body)) {
+            return gotoFlow(flowOtro);
+        } else
             if (usuariosAtendidos.has(ctx.from)) {
                 return gotoFlow(flowConsultas);
             }
+        usuariosAtendidos.add(ctx.from);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        return gotoFlow(infoAll);
 
-            usuariosAtendidos.add(ctx.from);
-
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            return gotoFlow(infoAll);
-
-        } else if (['otro', 'Otro'].includes(ctx.body)) {
+    } /* else if (['otro', 'Otro'].includes(ctx.body)) {
             return gotoFlow(flowDuda);
-        }
+        } */
 
-    }
 );
 
 
