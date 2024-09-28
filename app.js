@@ -79,17 +79,19 @@ const flowDuda = addKeyword(EVENTS.ACTION)
     })
 
 const infoAll = addKeyword(EVENTS.ACTION)
-    .addAnswer(info, { delay: 2000 })
-    .addAnswer(ubicacion, { media: 'https://i.imgur.com/hZC1K1b.png', delay: 2000 })
+    .addAnswer(info)
+    .addAnswer(ubicacion, { media: 'https://i.imgur.com/hZC1K1b.png', delay: 3000 })
     .addAnswer('_Ofrecemos_', { media: "https://i.imgur.com/i3HreSp.jpeg", delay: 2000 })
     .addAnswer('_Horarios_', { media: "https://i.imgur.com/uIt2uIm.jpeg", delay: 2000 })
     .addAnswer('_Costos_', { media: "https://i.imgur.com/RH0Mf69.jpeg", delay: 2000 })
     .addAnswer(['Visita nuestra página en Facebook', 'https://www.facebook.com/TerrazzaBarcelona'], { delay: 2000 })
     .addAnswer(apartado, { delay: 2000 })
-    .addAnswer(null, null, async (ctx, { endFlow }) => {
-        // Detiene el flujo aquí
-        return endFlow();
-    });
+    .addAnswer(['¿Tienes alguna otra consulta? por favor escríbela y te atenderemos pronto.',
+    ], { delay: 2000, capture: true }, async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
+        if (!['menu'].includes(ctx.body)) {
+            return fallBack('');
+        }
+    })
 
 
 const flowConsultas = addKeyword(EVENTS.ACTION)
@@ -102,27 +104,35 @@ const flowConsultas = addKeyword(EVENTS.ACTION)
     })
 
 
-let usuariosAtendidos = new Set();
-const infoFlow = addKeyword(EVENTS.WELCOME).addAnswer(
-    welcome,
-    { delay: 3000, capture: true },
-    async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
+    let usuariosAtendidos = new Set();
 
-        if (!['info', 'informacion', 'información', 'Info', 'INFO', 'informes',].includes(ctx.body)) {
-            return gotoFlow(flowOtro);
-        } else
+    const palabrasClave = ['info', 'informacion', 'información', 'info', 'informes'];
+    
+    const infoFlow = addKeyword(EVENTS.WELCOME).addAnswer(
+        welcome,
+        { capture: true },
+        async (ctx, { gotoFlow, fallBack }) => {
+            // Convertir el cuerpo del mensaje a minúsculas para hacer la comparación insensible a mayúsculas
+            const mensaje = ctx.body.toLowerCase();
+    
+            // Verificar si el mensaje contiene alguna de las palabras clave
+            const contienePalabraClave = palabrasClave.some(palabra => mensaje.includes(palabra));
+    
+            if (!contienePalabraClave) {
+                return fallBack(''); // No hacer nada si el mensaje no contiene las palabras clave
+            } 
+            
+            // Si el usuario ya fue atendido, no hacer nada
             if (usuariosAtendidos.has(ctx.from)) {
-                return gotoFlow(flowConsultas);
+                return fallBack(''); // No hacer nada si ya fue atendido
             }
-        usuariosAtendidos.add(ctx.from);
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        return gotoFlow(infoAll);
-
-    } /* else if (['otro', 'Otro'].includes(ctx.body)) {
-            return gotoFlow(flowDuda);
-        } */
-
-);
+    
+            usuariosAtendidos.add(ctx.from);
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Simulación de un pequeño retraso
+            return gotoFlow(infoAll); // Redirigir al flujo de información
+        }
+    );
+    
 
 
 const main = async () => {
